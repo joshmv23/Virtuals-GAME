@@ -1,0 +1,6 @@
+packages:
+  - "agent-wallet/*"
+  - "agent-wallet/packages/*"
+  - "game-node/*"
+  - "game-node/packages/*"
+  - "packages/*"

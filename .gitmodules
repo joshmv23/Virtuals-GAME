@@ -1,0 +1,6 @@
+[submodule "game-node"]
+	path = game-node
+	url = git@github.com:joshmv23/game-node.git
+[submodule "agent-wallet"]
+	path = agent-wallet
+	url = git@github.com:joshmv23/agent-wallet.git

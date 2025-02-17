@@ -1,0 +1,26 @@
+{
+  "name": "my-monorepo",
+  "private": true,
+  "scripts": {
+    "install": "pnpm install"
+  },
+  "workspaces": [
+    "agent-wallet",
+    "game-node",
+    "packages/integrations"
+  ],
+  "dependencies": {
+    "@lit-protocol/agent-wallet": "^0.1.0-19",
+    "@lit-protocol/constants": "^7.0.4"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@typechain/ethers-v5": "^11.1.2",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/dotenv": "^6.1.1",
+    "dotenv": "^16.4.7",
+    "hardhat": "^2.22.18",
+    "typechain": "^8.3.2"
+  }
+}
