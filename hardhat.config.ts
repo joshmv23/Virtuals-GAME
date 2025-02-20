@@ -1,10 +1,10 @@
 import { HardhatUserConfig } from "hardhat/config";
+import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
-import "@nomicfoundation/hardhat-toolbox";
 import "@typechain/hardhat";
-import dotenv from "dotenv";
-
-dotenv.config();
+import "hardhat-gas-reporter";
+import "solidity-coverage";
+import "dotenv/config";
 
 const config: HardhatUserConfig = {
   solidity: "0.8.20",
@@ -16,10 +16,16 @@ const config: HardhatUserConfig = {
       chainId: 31337
     },
     chronicle: {
-      url: "https://yellowstone-rpc.litprotocol.com/",
-      chainId: 175188,  // Chronicle Yellowstone testnet
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      url: process.env.RPC_URL || "https://yellowstone-rpc.litprotocol.com/",
+      chainId: 175177,
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
     }
+  },
+  typechain: {
+    outDir: "typechain-types",
+    target: "ethers-v5",
+    alwaysGenerateOverloads: true,
+    externalArtifacts: ["./artifacts/@openzeppelin/**/+([a-zA-Z0-9_]).json"]
   }
 };
 
